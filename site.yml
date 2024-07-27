@@ -6,12 +6,10 @@
     - name: Update apt package index
       apt:
         update_cache: yes
-
     - name: Install Apache2 package
       apt:
         name: apache2
         state: present
-
     - name: Ensure Apache2 is running
       service:
         name: apache2
