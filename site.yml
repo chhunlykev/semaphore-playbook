@@ -1,5 +1,5 @@
 ---
-- hosts: My Web-Server
+- hosts: web-server
   become: true
   tasks:
     - name: Print OS info
