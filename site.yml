@@ -1,7 +1,19 @@
 ---
-- hosts: web_server
-  become: true
+- name: Install Apache2 on Ubuntu Server
+  hosts: webservers
+  become: yes
   tasks:
-    - name: Print OS info
-      ansible.builtin.package:
+    - name: Update apt package index
+      apt:
+        update_cache: yes
+
+    - name: Install Apache2 package
+      apt:
         name: apache2
+        state: present
+
+    - name: Ensure Apache2 is running
+      service:
+        name: apache2
+        state: started
+        enabled: yes
