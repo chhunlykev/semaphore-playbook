@@ -1,6 +1,6 @@
 ---
 - name: Install Apache2 on Ubuntu Server
-  hosts: webservers
+  hosts: all
   become: yes
   tasks:
     - name: Update apt package index
